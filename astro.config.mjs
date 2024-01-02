@@ -7,5 +7,11 @@ import react from "@astrojs/react";
 export default defineConfig({
   output: "server",
   adapter: cloudflare(),
-  integrations: [react()]
+  integrations: [react()],
+  mode: 'directory',
+  functionPerRoute: true,
+  routes: {
+    strategy: 'include',
+    include: ['/authors/*'],
+  },
 });
