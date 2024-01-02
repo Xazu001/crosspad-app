@@ -1,5 +1,5 @@
 ---
-// import Author from "../../../src/components/author/author.jsx";
+import Author from "../../../src/components/author/author.jsx";
 import Layout from "../../../src/layouts/Layout.astro";
 import "/src/styles/styleAuthor.css";
 
@@ -63,5 +63,5 @@ if (!page) return Astro.redirect("/404");
 ---
 
 <Layout>
-  <!-- <Author name={author} client:only /> -->
+  <Author name={author} client:only />
 </Layout>

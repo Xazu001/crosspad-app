@@ -7,12 +7,12 @@ import react from "@astrojs/react";
 export default defineConfig({
   output: "server",
   adapter: cloudflare({
-    mode: "directory",
-    functionPerRoute: true,
+    mode: 'directory',
     routes: {
-      strategy: "exclude",
-      exclude: ["/*.wav", "/*.json", "/*.svg", "/*.png"],
-    }
+      strategy: 'include',
+      include: '/authors/*',
+      exclude: ['/*.wav', '/*.json', '/*.svg', '/*.png'] // handled by static page: pages/users/faq.astro
+    },
   }),
   integrations: [react()],
 });

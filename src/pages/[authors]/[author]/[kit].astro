@@ -1,11 +1,11 @@
 ---
 import Layout from "../../../../src/layouts/Layout.astro";
-// import Sample from "../../../../src/components/kit/sample.jsx";
+import Sample from "../../../../src/components/kit/sample.jsx";
 import "/src/styles/styleApp.css";
 
 const { author, kit } = Astro.params;
 ---
 
 <Layout>
-  <!-- <Sample client:only author={author} name={kit} /> -->
+  <Sample client:only author={author} name={kit} />
 </Layout>
