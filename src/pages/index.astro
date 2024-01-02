@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/styleHome.css";
+import Hero from "../components/homeComponents/Hero";
+import Kits from "../components/homeComponents/Kits";
+import Authors from "../components/homeComponents/Authors";
+---
+
+<Layout>
+  <main class="home">
+    <Hero />
+    <Kits />
+    <Authors client:load />
+    <section class="description p1">
+      <h1>CrosspPad</h1>
+      <p>
+        Welcome to the new Crosspad.app! Now with support for most MIDI
+        controllers. Explore the best kits from the world's top finger drummers
+        in your browser. We recommend using Google Chrome for the best
+        performance. Ready for an exciting finger drumming experience?
+      </p>
+    </section>
+  </main>
+</Layout>

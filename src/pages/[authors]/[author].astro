@@ -1,0 +1,16 @@
+---
+import Author from "/src/components/author/author.jsx";
+import Layout from "/src/layouts/Layout.astro";
+import "/src/styles/styleAuthor.css";
+
+export function getStaticPaths() {
+  return [{ params: { author: "bryndal" } }];
+}
+
+const { author } = Astro.params;
+---
+
+<Layout>
+  <!-- <h1>Dupa</h1> -->
+  <Author name={author} />
+</Layout>
