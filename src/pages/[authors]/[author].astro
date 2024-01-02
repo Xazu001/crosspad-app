@@ -1,16 +1,67 @@
 ---
-import Author from "/src/components/author/author.jsx";
-import Layout from "/src/layouts/Layout.astro";
+// import Author from "../../../src/components/author/author.jsx";
+import Layout from "../../../src/layouts/Layout.astro";
 import "/src/styles/styleAuthor.css";
 
-export function getStaticPaths() {
-  return [{ params: { author: "bryndal" } }];
-}
+const pages = [
+  {
+    author: "stevenash",
+  },
+  {
+    author: "bryndal",
+  },
+  {
+    author: "grzana",
+  },
+  {
+    author: "hawtcoco",
+  },
+  {
+    author: "rudnik",
+  },
+  {
+    author: "pancho",
+  },
+  {
+    author: "profsk",
+  },
+  {
+    author: "krklive",
+  },
+  {
+    author: "c3b0",
+  },
+  {
+    author: "oska",
+  },
+  {
+    author: "oer",
+  },
+  {
+    author: "beye",
+  },
+  {
+    author: "mlekobeats",
+  },
+  {
+    author: "amatowsky",
+  },
+  {
+    author: "chmielix",
+  },
+  {
+    author: "resetovski",
+  },
+  {
+    author: "urbek",
+  },
+];
 
 const { author } = Astro.params;
+const page = pages.find((page) => page.author === author);
+if (!page) return Astro.redirect("/404");
 ---
 
 <Layout>
-  <!-- <h1>Dupa</h1> -->
-  <Author name={author} />
+  <!-- <Author name={author} client:only /> -->
 </Layout>

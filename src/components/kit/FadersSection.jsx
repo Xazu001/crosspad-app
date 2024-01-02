@@ -7,7 +7,6 @@ import {
 } from "/src/lib/music/audio";
 import Slider from "@mui/material/Slider";
 import { CacheProvider } from "@emotion/react";
-import createCache from "@emotion/cache";
 
 export default function FadersSection(props) {
   const [volumeValue, setVolumeValue] = useState(1);
@@ -53,11 +52,6 @@ export default function FadersSection(props) {
     localStorage.setItem("crosspadVolume", JSON.stringify(toLocalStorage));
   }
 
-  const cache = createCache({
-    key: "css",
-    prepend: true,
-  });
-
   const style = {
     border: "1px solid #333333",
     height: "5rem",
@@ -95,17 +89,16 @@ export default function FadersSection(props) {
           <div className="faderValue">
             <p>{Math.round((100 / 1) * volumeValue)}%</p>
           </div>
-          <CacheProvider value={cache}>
-            <Slider
-              id="volumeFader"
-              sx={style}
-              min={0}
-              max={1}
-              step={0.02}
-              value={volumeValue}
-              onChange={handleChange}
-            ></Slider>
-          </CacheProvider>
+
+          <Slider
+            id="volumeFader"
+            sx={style}
+            min={0}
+            max={1}
+            step={0.02}
+            value={volumeValue}
+            onChange={handleChange}
+          ></Slider>
         </div>
         <div className="faderItem">
           <label htmlFor="frequencyFader" className="control-label">
@@ -114,17 +107,16 @@ export default function FadersSection(props) {
           <div className="faderValue">
             <p>{(vFrequencyValue - 10000) / 100}%</p>
           </div>
-          <CacheProvider value={cache}>
-            <Slider
-              id="frequencyFader"
-              sx={style}
-              min={10000}
-              max={20000}
-              step={100}
-              value={vFrequencyValue}
-              onChange={(e) => setVFrequencyValue(e.target.value)}
-            ></Slider>
-          </CacheProvider>
+
+          <Slider
+            id="frequencyFader"
+            sx={style}
+            min={10000}
+            max={20000}
+            step={100}
+            value={vFrequencyValue}
+            onChange={(e) => setVFrequencyValue(e.target.value)}
+          ></Slider>
         </div>
         <div className="faderItem">
           <label htmlFor="pitchSlider" className="control-label">
@@ -133,17 +125,16 @@ export default function FadersSection(props) {
           <div className="faderValue">
             <p>{transformPitchValue(pitchValue) + " "}</p>
           </div>
-          <CacheProvider value={cache}>
-            <Slider
-              id="pitchFader"
-              sx={style}
-              min={0.4}
-              max={1.6}
-              step={0.05}
-              value={pitchValue}
-              onChange={(e) => setPitchValue(e.target.value)}
-            ></Slider>
-          </CacheProvider>
+
+          <Slider
+            id="pitchFader"
+            sx={style}
+            min={0.4}
+            max={1.6}
+            step={0.05}
+            value={pitchValue}
+            onChange={(e) => setPitchValue(e.target.value)}
+          ></Slider>
 
           <span id="pitchSlider" value={pitchValue}></span>
         </div>

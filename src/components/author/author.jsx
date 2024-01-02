@@ -86,89 +86,88 @@ export default function Author(props) {
   }, [props.name]);
 
   return (
-    <h1>Dupa</h1>
-    // <main
-    //   className="author"
-    //   style={{
-    //     display: "flex",
-    //     flexDirection: "column",
-    //     justifyContent: "space-between",
-    //     background: "#252525",
-    //   }}
-    // >
-    //   <div
-    //     className="authorMain"
-    //     style={{
-    //       borderRadius: "0 0 16px 16px",
-    //       width: "100%",
-    //       display: "flex",
-    //       flexDirection: "column",
-    //       alignItems: "center",
-    //       flexGrow: "1",
-    //       overflowY: "scroll",
-    //       background: "var(--bgColor)",
-    //       paddingTop: "2rem",
-    //     }}
-    //   >
-    //     <img
-    //       src={`/authors/${props.name}/photo.png`}
-    //       className="photo"
-    //       alt=""
-    //     />
-    //     <h2>{props.name}</h2>
+    <main
+      className="author"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        background: "#252525",
+      }}
+    >
+      <div
+        className="authorMain"
+        style={{
+          borderRadius: "0 0 16px 16px",
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          flexGrow: "1",
+          overflowY: "scroll",
+          background: "var(--bgColor)",
+          paddingTop: "2rem",
+        }}
+      >
+        <img
+          src={`/authors/${props.name}/photo.png`}
+          className="photo"
+          alt=""
+        />
+        <h2>{props.name}</h2>
 
-    //     <div className="socialMedia">
-    //       {data && data.facebook && (
-    //         <a href={data && data.facebook} target="_blank">
-    //           <i className="fa-brands fa-square-facebook"></i>
-    //         </a>
-    //       )}
-    //       {data && data.instagram && (
-    //         <a href={data && data.instagram} target="_blank">
-    //           <i className="fa-brands fa-instagram"></i>
-    //         </a>
-    //       )}
-    //       {data && data.youtube && (
-    //         <a href={data && data.youtube} target="_blank">
-    //           <i className="fa-brands fa-youtube"></i>
-    //         </a>
-    //       )}
-    //       {data && data.spotify && (
-    //         <a href={data && data.spotify} target="_blank">
-    //           <i className="fa-brands fa-spotify"></i>
-    //         </a>
-    //       )}
-    //       {data && data.tiktok && (
-    //         <a href={data && data.tiktok} target="_blank">
-    //           <i className="fa-brands fa-tiktok"></i>
-    //         </a>
-    //       )}
-    //       {data && data.soundcloud && (
-    //         <a href={data && data.soundcloud} target="_blank">
-    //           <i className="fa-brands fa-soundcloud"></i>
-    //         </a>
-    //       )}
-    //       {data && data.bandcamp && (
-    //         <a href={data && data.bandcamp} target="_blank">
-    //           <i className="fa-brands fa-bandcamp"></i>
-    //         </a>
-    //       )}
-    //       {data && data.www && (
-    //         <a href={data && data.www} target="_blank">
-    //           <i class="fa-solid fa-globe"></i>
-    //         </a>
-    //       )}
-    //     </div>
-    //     <p className="p1">{data && data.about}</p>
+        <div className="socialMedia">
+          {data && data.facebook && (
+            <a href={data && data.facebook} target="_blank">
+              <i className="fa-brands fa-square-facebook"></i>
+            </a>
+          )}
+          {data && data.instagram && (
+            <a href={data && data.instagram} target="_blank">
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+          )}
+          {data && data.youtube && (
+            <a href={data && data.youtube} target="_blank">
+              <i className="fa-brands fa-youtube"></i>
+            </a>
+          )}
+          {data && data.spotify && (
+            <a href={data && data.spotify} target="_blank">
+              <i className="fa-brands fa-spotify"></i>
+            </a>
+          )}
+          {data && data.tiktok && (
+            <a href={data && data.tiktok} target="_blank">
+              <i className="fa-brands fa-tiktok"></i>
+            </a>
+          )}
+          {data && data.soundcloud && (
+            <a href={data && data.soundcloud} target="_blank">
+              <i className="fa-brands fa-soundcloud"></i>
+            </a>
+          )}
+          {data && data.bandcamp && (
+            <a href={data && data.bandcamp} target="_blank">
+              <i className="fa-brands fa-bandcamp"></i>
+            </a>
+          )}
+          {data && data.www && (
+            <a href={data && data.www} target="_blank">
+              <i class="fa-solid fa-globe"></i>
+            </a>
+          )}
+        </div>
+        <p className="p1">{data && data.about}</p>
 
-    //     {!loading ? <KitsList kits={kits} author={props.name} /> : null}
-    //   </div>
+        {!loading ? <KitsList kits={kits} author={props.name} /> : null}
+      </div>
 
-    //   <nav className="navBar">
-    //     <div className="navBarMain">
-    //       <Abort></Abort>
-    //     </div>
-    //   </nav>
-    // </main>
+      <nav className="navBar">
+        <div className="navBarMain">
+          <Abort></Abort>
+        </div>
+      </nav>
+    </main>
   );
 }
