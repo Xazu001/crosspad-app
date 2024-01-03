@@ -8,7 +8,7 @@ export default function DescribeSection(props) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `/authors/${props.author}/kits/${props.name}/infos.json`
+          `https://r2.crosspad.app/authors/${props.author}/kits/${props.name}/infos.json`
         );
         if (!response.ok) {
           throw new Error("Błąd pobierania danych");
@@ -22,7 +22,9 @@ export default function DescribeSection(props) {
 
     const fetchSocialMedia = async () => {
       try {
-        const response = await fetch(`/authors/${props.author}/infos.json`);
+        const response = await fetch(
+          `https://r2.crosspad.app/authors/${props.author}/infos.json`
+        );
         if (!response.ok) {
           throw new Error("Błąd pobierania danych");
         }
@@ -43,7 +45,7 @@ export default function DescribeSection(props) {
         <div className="about">
           <a href={`/authors/${props.author}`}>
             <img
-              src={`/authors/${props.author}/photo.png`}
+              src={`https://r2.crosspad.app/authors/${props.author}/photo.png`}
               alt="photo"
               className="photo"
             />

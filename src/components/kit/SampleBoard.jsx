@@ -78,7 +78,9 @@ function ChokeSelectGenerate(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${props.fetchSrc}/musicInfo.json`);
+        const response = await fetch(
+          `https://r2.crosspad.app/authors/${props.author}/kits/${props.name}/musicInfo.json`
+        );
         if (!response.ok) {
           throw new Error("Błąd pobierania danych");
         }
@@ -337,7 +339,7 @@ export default function SampleBoard(props) {
       for (let i = 0; i <= 15; i++) {
         let index = FILE_ORDER[i] - 1;
         for (const wavFile of sampleBoard[i]) {
-          const url = `/authors/${props.author}/kits/${props.name}/SAMPLES/${wavFile}`;
+          const url = `https://r2.crosspad.app/authors/${props.author}/kits/${props.name}/SAMPLES/${wavFile}`;
 
           const promise = fetch(url)
             .then((response) => {
@@ -358,7 +360,7 @@ export default function SampleBoard(props) {
       const tasks = new Array(fileOrder.length);
 
       for (let i = 1; i <= 16; i++) {
-        const url = `/authors/${props.author}/kits/${props.name}/SAMPLES/${i}.wav`;
+        const url = `https://r2.crosspad.app/authors/${props.author}/kits/${props.name}/SAMPLES/${i}.wav`;
 
         const promise = fetch(url)
           .then((response) => {
@@ -378,7 +380,7 @@ export default function SampleBoard(props) {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `/authors/${props.author}/kits/${props.name}/musicInfo.json`
+          `https://r2.crosspad.app/authors/${props.author}/kits/${props.name}/musicInfo.json`
         );
         if (!response.ok) {
           throw new Error("Błąd pobierania danych");

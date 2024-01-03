@@ -8,11 +8,11 @@ export default defineConfig({
   output: "server",
   adapter: cloudflare({
     mode: 'directory',
-    routes: {
-      strategy: 'include',
-      include: '/authors/*',
-      exclude: ['/*.wav', '/*.json', '/*.svg', '/*.png'] // handled by static page: pages/users/faq.astro
-    },
+    functionPerRoute: true,
+    // routes: {
+    //   strategy: 'include',
+    //   include: ['/authors/*'],
+    // },
   }),
   integrations: [react()],
 });

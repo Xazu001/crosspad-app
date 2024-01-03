@@ -28,7 +28,7 @@ export default function Sample(props) {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `/authors/${props.author}/kits/${props.name}/style.json`
+        `https://r2.crosspad.app/authors/${props.author}/kits/${props.name}/style.json`
       );
       if (!response.ok) {
         throw new Error("Błąd pobierania danych");
@@ -240,7 +240,7 @@ export default function Sample(props) {
       <section className="loadingScreen">
         <img
           id="logo"
-          src={`/authors/${props.author}/kits/${props.name}/logo.svg `}
+          src={`https://r2.crosspad.app/authors/${props.author}/kits/${props.name}/logo.svg `}
           alt={`${props.name}`}
           rel="preload"
         ></img>
@@ -270,14 +270,12 @@ export default function Sample(props) {
           <header className="">
             <section className="info p1">
               <div className="infoLeft">
-                {/* <div className="infoImg">
-                  <div className="img">
-                    <img src={`/authors/${props.author}/photo.png`} alt="" />
-                  </div>
-                </div> */}
                 <div className="infoImg">
                   <div className="img">
-                    <img src={`/authors/${props.author}/logo.svg`} alt="" />
+                    <img
+                      src={`https://r2.crosspad.app/authors/${props.author}/logo.svg`}
+                      alt=""
+                    />
                   </div>
                 </div>
 
@@ -290,7 +288,7 @@ export default function Sample(props) {
             <section className="logoBannerSection p1">
               <div className="logoBannerMain">
                 <img
-                  src={`/authors/${props.author}/kits/${props.name}/logo.svg`}
+                  src={`https://r2.crosspad.app/authors/${props.author}/kits/${props.name}/logo.svg`}
                   alt=""
                 />
               </div>
@@ -301,7 +299,7 @@ export default function Sample(props) {
               <SampleBoard
                 {...props}
                 globalState={globalState}
-                fetchSrc={`/authors/${props.author}/kits/${props.name}`}
+                fetchSrc={`https://r2.crosspad.app/authors/${props.author}/kits/${props.name}/`}
                 stylesData={stylesData}
               />
             ) : null}
@@ -320,7 +318,7 @@ export default function Sample(props) {
       </section>
 
       <DescribeSection
-        fetchSrc={`/authors/${props.author}/kits/${props.name}`}
+        fetchSrc={`https://r2.crosspad.app/authors/${props.author}/kits/${props.name}`}
         author={props.author}
         name={props.name}
         stylesData={stylesData}

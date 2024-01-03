@@ -42,7 +42,10 @@ function AuthorsListItem(props) {
   return (
     <a href={`authors/${props.name}`} key={props.name}>
       <div className="authorsItem">
-        <img src={`/authors/${props.name}/photo.png`} alt={props.name}></img>
+        <img
+          src={`https://r2.crosspad.app/authors/${props.name}/photo.png`}
+          alt={props.name}
+        ></img>
       </div>
     </a>
   );

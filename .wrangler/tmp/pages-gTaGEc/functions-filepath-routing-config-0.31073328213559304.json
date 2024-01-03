@@ -1,0 +1,61 @@
+{
+  "routes": [
+    {
+      "routePath": "/:authors/:author/:kit",
+      "mountPath": "/:authors/:author",
+      "method": "",
+      "module": [
+        "[authors]/[author]/[kit].js:onRequest"
+      ]
+    },
+    {
+      "routePath": "/:authors/:author",
+      "mountPath": "/:authors",
+      "method": "",
+      "module": [
+        "[authors]/[author].js:onRequest"
+      ]
+    },
+    {
+      "routePath": "/_image",
+      "mountPath": "/",
+      "method": "",
+      "module": [
+        "_image.js:onRequest"
+      ]
+    },
+    {
+      "routePath": "/authors",
+      "mountPath": "/",
+      "method": "",
+      "module": [
+        "authors.js:onRequest"
+      ]
+    },
+    {
+      "routePath": "/kits",
+      "mountPath": "/",
+      "method": "",
+      "module": [
+        "kits.js:onRequest"
+      ]
+    },
+    {
+      "routePath": "/:path*",
+      "mountPath": "/",
+      "method": "",
+      "module": [
+        "[[path]].js:onRequest"
+      ]
+    },
+    {
+      "routePath": "/",
+      "mountPath": "/",
+      "method": "",
+      "module": [
+        "index.js:onRequest"
+      ]
+    }
+  ],
+  "baseURL": "/"
+}

@@ -19,7 +19,7 @@ function KitItem(props) {
         <div className="kitItem br">
           <div className="kitItemMain" style={{ padding: "0.5rem" }}>
             <img
-              src={`/authors/${props.author}/kits/${props.kit}/logo.svg`}
+              src={`https://r2.crosspad.app/authors/${props.author}/kits/${props.kit}/logo.svg`}
               alt=""
               style={{
                 maxWidth: "90%",
@@ -44,7 +44,7 @@ export default function Kits() {
     try {
       const fetchedKits = await Promise.all(
         authors.map(async (author) => {
-          const sciezkaPliku = `/authors/${author}/kits.json`;
+          const sciezkaPliku = `https://r2.crosspad.app/authors/${author}/kits.json`;
           const response = await fetch(sciezkaPliku);
 
           if (!response.ok) {
@@ -106,7 +106,6 @@ export default function Kits() {
       >
         <div
           style={{
-            // width: "100%",
             padding: "1.2rem 2.6rem",
             background: "var(--itemsColor)",
             borderRadius: "8px",
