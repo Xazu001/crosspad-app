@@ -3,14 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/styleHome.css";
 import Hero from "../components/homeComponents/Hero";
 import Kits from "../components/homeComponents/Kits";
-import Authors from "../components/homeComponents/Authors";
 ---
 
 <Layout>
   <main class="home">
     <Hero />
     <Kits />
-    <Authors client:only />
     <section class="description p1">
       <h1>CrosspPad</h1>
       <p>

@@ -12,10 +12,9 @@ export default defineConfig({
     functionPerRoute: true,
     routes: {
       strategy: 'include',
-      include: ['/authors/*', '/'],
+      include: ['/authors/*'],
     },
   }),
-  integrations: [react(), sitemap()],
-  site: 'https://crosspad.app',
+  integrations: [react()],
 
 });
