@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { activeSources } from "/src/lib/music/audio";
 import Abort from "/src/components/abort";
 
 function KitItem(props) {
@@ -38,15 +37,6 @@ function KitsList({ kits, author }) {
 }
 
 export default function Author(props) {
-  const [dataFetched, setDataFetched] = useState();
-  if (activeSources) {
-    activeSources.forEach(function (source) {
-      if (source instanceof AudioBufferSourceNode) {
-        source.stop();
-      }
-    });
-  }
-
   const [data, setData] = useState(null);
   const [kits, setKits] = useState([]);
   const [loading, setLoading] = useState(true);

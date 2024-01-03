@@ -8,16 +8,6 @@ import react from "@astrojs/react";
 export default defineConfig({
   output: "server",
   adapter: cloudflare({
-    runtime: {
-      mode: 'local',
-      type: 'pages',
-      bindings: {
-        "URL": {
-type: "var",
-value: "https://crosspad.app",
-        },
-      },
-    },
     mode: 'directory',
     functionPerRoute: true,
     routes: {

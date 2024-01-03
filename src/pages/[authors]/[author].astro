@@ -63,5 +63,5 @@ if (!page) return Astro.redirect("/404");
 ---
 
 <Layout>
-  <Author name={author} client:only />
+  <Author name={author} client:load />
 </Layout>
