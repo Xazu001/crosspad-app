@@ -9,10 +9,10 @@ export default defineConfig({
   adapter: cloudflare({
     mode: 'directory',
     functionPerRoute: true,
-    // routes: {
-    //   strategy: 'include',
-    //   include: ['/authors/*'],
-    // },
+    routes: {
+      strategy: 'include',
+      include: ['/authors/*'],
+    },
   }),
   integrations: [react()],
 });

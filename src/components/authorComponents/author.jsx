@@ -8,7 +8,7 @@ function KitItem(props) {
       <a href={`/authors/${props.author}/${props.kitName}`}>
         <div className="authorKitItem br">
           <img
-            src={`/authors/${props.author}/kits/${props.kitName}/logo.svg`}
+            src={`https://r2.crosspad.app/authors/${props.author}/kits/${props.kitName}/logo.svg`}
             alt=""
             style={{
               maxWidth: "90%",
@@ -53,7 +53,9 @@ export default function Author(props) {
 
   const getAllKits = async () => {
     try {
-      const response = await fetch(`/authors/${props.name}/kits.json`);
+      const response = await fetch(
+        `https://r2.crosspad.app/authors/${props.name}/kits.json`
+      );
       if (!response.ok) {
         throw new Error("Błąd pobierania danych");
       }
@@ -70,7 +72,9 @@ export default function Author(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${props.name}/infos.json`);
+        const response = await fetch(
+          `https://r2.crosspad.app/authors/${props.name}/infos.json`
+        );
         if (!response.ok) {
           throw new Error("Błąd pobierania danych");
         }
@@ -110,7 +114,7 @@ export default function Author(props) {
         }}
       >
         <img
-          src={`/authors/${props.name}/photo.png`}
+          src={`https://r2.crosspad.app/authors/${props.name}/photo.png`}
           className="photo"
           alt=""
         />
