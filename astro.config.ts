@@ -12,7 +12,7 @@ export default defineConfig({
     functionPerRoute: true,
     routes: {
       strategy: 'include',
-      include: ['/authors/*'],
+      include: ['/authors/*', '/sitemap-0.xml', '/sitemap-index.xml', '/'],
     },
   }),
   integrations: [react(), sitemap()],
